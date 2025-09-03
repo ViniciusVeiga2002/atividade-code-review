@@ -13,3 +13,9 @@ def cifra_de_cesar(texto, deslocamento):
         else:
             resultado.append(char)
     return ''.join(resultado)
+
+import string
+def encontrar_maior_palavra(frase):
+    frase_limpa = frase.translate(str.maketrans('', '', string.punctuation))
+    palavras = frase_limpa.split()
+    return max(palavras, key=len)
